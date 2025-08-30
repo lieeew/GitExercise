@@ -1,21 +1,31 @@
 package com.leikooo;
 
+import java.util.TreeMap;
+
 /**
  * @author <a href="https://github.com/lieeew">leikooo</a>
  * @date 2025/8/28
  * @description
- *///TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+ */
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        TreeMap<Users, String> treeMap = new TreeMap<>();
+        Users users = new Users();
+        users.setName("leikooo");
+        users.setAge(10);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Users users2 = new Users();
+        users2.setName("leikooo2");
+        users2.setAge(20);
+
+        Users users3 = new Users();
+        users3.setName("leikooo3");
+        users3.setAge(-1);
+
+        treeMap.put(users, users.getName());
+        treeMap.put(users2, users2.getName());
+        treeMap.put(users3, users3.getName());
+
+        treeMap.forEach((k, v) -> System.out.println(k + " " + v));
     }
 }
